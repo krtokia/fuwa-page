@@ -119,6 +119,40 @@ handle.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") setPos(v + 5);
 });
 
+/* ---------- 캐릭터 후와 ---------- */
+const CHARA = [
+  ["00-standing-grumpy", "근엄 모드", "기본값. 사진 찍지 마라."],
+  ["02-sit", "정자세", "꼬리까지 단정하게."],
+  ["03-loaf", "식빵", "지금 구워지는 중."],
+  ["04-sleep", "꿀잠", "깨우면 더 근엄해짐."],
+  ["05-paw-reach", "손!", "츄르가 보이면 줌."],
+  ["08-groom", "그루밍", "털 관리가 곧 업무."],
+  ["11-door-scratch", "문 열어", "닫힌 문은 용서 못 함."],
+  ["07-stretch", "기지개", "하루에 열두 번."],
+  ["09-play", "사냥 자세", "엉덩이 흔들기 3초 전."],
+  ["06-peek", "감시 중", "뭐 하는지 다 보고 있음."],
+  ["01-standing-friendly", "기분 좋은 날", "가끔은 다정함. 가끔."],
+  ["10-side-idle", "옆모습", "귀족의 실루엣."],
+];
+const SAY = ["냥.", "…뭐.", "츄르는?", "쓰다듬어도 됨.", "사진 그만.", "흥.", "배고프다.", "나 불렀냐."];
+const charas = $("#charas");
+for (const [k, name, line] of CHARA) {
+  const f = document.createElement("figure"); f.className = "chara"; f.tabIndex = 0;
+  f.setAttribute("role", "button"); f.setAttribute("aria-label", `${name} — ${line}`);
+  f.innerHTML = `<div class="spot"><picture><source srcset="/v2/chara/${k}-still.webp" media="(prefers-reduced-motion: reduce)">` +
+    `<img src="/v2/chara/${k}.webp" alt="" width="480" height="480" loading="lazy" decoding="async"></picture></div><i class="say"></i>` +
+    `<figcaption><b>${name}</b><span>${line}</span></figcaption>`;
+  let t;
+  const poke = () => {
+    const say = $(".say", f); let w; do w = SAY[Math.random() * SAY.length | 0]; while (w === say.textContent && SAY.length > 1);
+    say.textContent = w; f.classList.remove("hop"); void f.offsetWidth; f.classList.add("hop", "talk");
+    clearTimeout(t); t = setTimeout(() => f.classList.remove("talk"), 1600);
+  };
+  f.addEventListener("click", poke);
+  f.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); poke(); } });
+  charas.append(f);
+}
+
 /* ---------- 데이터 ---------- */
 fetch("/photos.json").then((r) => r.json()).then((list) => {
   const all = list.slice().sort((a, b) => a.d.localeCompare(b.d));
@@ -234,11 +268,11 @@ function scrollFx() {
   });
 
   // 6) 등장 효과 몇 개
-  for (const s of [".churu-sec h2", ".wall-sec h2", ".compare-sec h2", ".churu-stage", ".goods-sec h2"])
+  for (const s of [".churu-sec h2", ".wall-sec h2", ".compare-sec h2", ".churu-stage", ".chara-sec h2"])
     gsap.from(s, { y: 50, opacity: 0, duration: 1, ease: "expo.out", scrollTrigger: { trigger: s, start: "top 85%" } });
 
-  gsap.from(".good", { y: 90, opacity: 0, rotate: (i) => [-6, 0, 6][i], stagger: 0.15, duration: 1.1, ease: "back.out(1.4)",
-    scrollTrigger: { trigger: ".goods", start: "top 80%" } });
+  gsap.from(".chara", { y: 70, opacity: 0, scale: .92, stagger: { each: 0.07, grid: "auto", from: "start" }, duration: 0.9, ease: "back.out(1.5)",
+    scrollTrigger: { trigger: "#charas", start: "top 82%" } });
 
   // 7) 사진 벽: 스크롤 속도만큼 기울기
   const wall = $("#wall"); let sk = 0;
