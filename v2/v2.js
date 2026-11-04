@@ -234,8 +234,11 @@ function scrollFx() {
   });
 
   // 6) 등장 효과 몇 개
-  for (const s of [".churu-sec h2", ".wall-sec h2", ".compare-sec h2", ".churu-stage"])
+  for (const s of [".churu-sec h2", ".wall-sec h2", ".compare-sec h2", ".churu-stage", ".goods-sec h2"])
     gsap.from(s, { y: 50, opacity: 0, duration: 1, ease: "expo.out", scrollTrigger: { trigger: s, start: "top 85%" } });
+
+  gsap.from(".good", { y: 90, opacity: 0, rotate: (i) => [-6, 0, 6][i], stagger: 0.15, duration: 1.1, ease: "back.out(1.4)",
+    scrollTrigger: { trigger: ".goods", start: "top 80%" } });
 
   // 7) 사진 벽: 스크롤 속도만큼 기울기
   const wall = $("#wall"); let sk = 0;
