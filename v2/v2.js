@@ -119,6 +119,19 @@ handle.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") setPos(v + 5);
 });
 
+/* ---------- 이미지 늦게 불러오기 ----------
+   loading="lazy" 는 사파리가 transform 으로 움직이는 줄(사진 벽·가로 연표) 안 사진을 화면 밖으로 보고 끝내 안 불러온다.
+   그래서 구역 단위로 지켜보다가 가까워지면 그 안의 사진을 한꺼번에 불러온다. */
+function later(root, margin = "900px") {
+  const io = new IntersectionObserver((es) => {
+    for (const e of es) if (e.isIntersecting) {
+      for (const i of $$("img[data-src]", e.target)) { i.src = i.dataset.src; i.removeAttribute("data-src"); }
+      io.unobserve(e.target);
+    }
+  }, { rootMargin: margin });
+  io.observe(root);
+}
+
 /* ---------- 캐릭터 후와 ---------- */
 const CHARA = [
   ["00-standing-grumpy", "근엄 모드", "기본값. 사진 찍지 마라."],
@@ -140,7 +153,7 @@ for (const [k, name, line] of CHARA) {
   const f = document.createElement("figure"); f.className = "chara"; f.tabIndex = 0;
   f.setAttribute("role", "button"); f.setAttribute("aria-label", `${name} — ${line}`);
   f.innerHTML = `<div class="spot"><picture><source srcset="/v2/chara/${k}-still.webp" media="(prefers-reduced-motion: reduce)">` +
-    `<img src="/v2/chara/${k}.webp" alt="" width="480" height="480" loading="lazy" decoding="async"></picture></div><i class="say"></i>` +
+    `<img data-src="/v2/chara/${k}.webp" alt="" width="480" height="480" decoding="async"></picture></div><i class="say"></i>` +
     `<figcaption><b>${name}</b><span>${line}</span></figcaption>`;
   let t;
   const poke = () => {
@@ -152,11 +165,12 @@ for (const [k, name, line] of CHARA) {
   f.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); poke(); } });
   charas.append(f);
 }
+later(charas);
 
 /* ---------- 데이터 ---------- */
 fetch("/photos.json").then((r) => r.json()).then((list) => {
   const all = list.slice().sort((a, b) => a.d.localeCompare(b.d));
-  buildYears(all);
+  buildYears(all); later($("#years"));
   buildWall(all);
   if (!RM) scrollFx();
   else $$(".stat b").forEach((b) => (b.textContent = b.dataset.count));
@@ -180,7 +194,7 @@ function buildYears(all) {
     for (const p of pick) {
       const b = document.createElement("button");
       b.className = "pol";
-      b.innerHTML = `<img src="/img/t/${p.f}.webp" alt="${fmt(p.d)} 후와" loading="lazy">`;
+      b.innerHTML = `<img data-src="/img/t/${p.f}.webp" alt="${fmt(p.d)} 후와" decoding="async">`;
       b.onclick = () => openLB(p);
       st.append(b);
     }
@@ -200,12 +214,13 @@ function buildWall(all) {
     const set = shuffled.slice(r * 16, r * 16 + 16);
     for (const p of [...set, ...set]) {
       const b = document.createElement("button");
-      b.innerHTML = `<img src="/img/t/${p.f}.webp" alt="${fmt(p.d)} 후와" loading="lazy" width="${p.tw}" height="${p.th}">`;
+      b.innerHTML = `<img data-src="/img/t/${p.f}.webp" alt="${fmt(p.d)} 후와" decoding="async" width="${p.tw}" height="${p.th}">`;
       b.onclick = () => openLB(p);
       row.append(b);
     }
     wall.append(row);
   }
+  later(wall);
 }
 
 /* ---------- 스크롤 연출 ---------- */
