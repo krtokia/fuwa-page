@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>후와 · Fuwa</title>
+<meta name="description" content="2016년 3월생 페르시안 고양이 후와. 츄르 앞에서는 체면이 없다.">
+<meta property="og:title" content="후와 · Fuwa">
+<meta property="og:description" content="2016년 3월생 페르시안. 츄르 앞에서는 체면이 없다.">
+<meta property="og:image" content="https://fuwa.dad/og.jpg">
+<meta property="og:url" content="https://fuwa.dad/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f1ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1917" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <picture>
+    <source media="(max-aspect-ratio: 4/5)" srcset="/img/l/20250929-554.webp">
+    <img class="hero-img" src="/img/l/20240205-372.webp" alt="정면을 노려보는 후와" fetchpriority="high">
+  </picture>
+  <div class="hero-shade"></div>
+  <div class="hero-text">
+    <p class="kana">ふわ</p>
+    <h1>후와</h1>
+    <p class="lede">2016년 3월생 페르시안.<br>츄르 앞에서는 체면이 없다.</p>
+  </div>
+  <a class="scroll-hint" href="#about" aria-label="아래로">↓</a>
+</header>
+
+<main>
+  <section id="about" class="about wrap">
+    <div class="card">
+      <h2>프로필</h2>
+      <dl>
+        <div><dt>이름</dt><dd>후와 <span class="muted">(ふわ, 폭신폭신)</span></dd></div>
+        <div><dt>생일</dt><dd>2016년 3월 <span class="muted" id="age"></span></dd></div>
+        <div><dt>품종</dt><dd>페르시안</dd></div>
+        <div><dt>좋아하는 것</dt><dd>츄르. 환장함.</dd></div>
+        <div><dt>특기</dt><dd>근엄한 표정, 상자·바구니 들어가기, 사진기 노려보기</dd></div>
+        <div><dt>같이 사는 냥</dt><dd>턱시도 친구 하나</dd></div>
+      </dl>
+    </div>
+    <figure class="then-now">
+      <div class="tn-item"><img src="/img/t/20160624-022.webp" alt="2016년 아기 후와" loading="lazy"><figcaption>2016</figcaption></div>
+      <span class="tn-arrow">→</span>
+      <div class="tn-item"><img src="/img/t/20250929-554.webp" alt="2025년 후와" loading="lazy"><figcaption>지금</figcaption></div>
+    </figure>
+  </section>
+
+  <section class="timeline wrap">
+    <h2>후와의 <span id="years">10</span>년</h2>
+    <ol id="tl"></ol>
+  </section>
+
+  <section class="gallery wrap" id="gallery">
+    <div class="g-head">
+      <h2>사진첩 <span class="muted" id="gcount"></span></h2>
+      <div class="filters" id="filters" role="tablist"></div>
+    </div>
+    <div class="masonry" id="grid"></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>fuwa.dad — 후와 아빠가 만든 집</p>
+</footer>
+
+<div class="lb" id="lb" hidden>
+  <button class="lb-close" id="lbClose" aria-label="닫기">×</button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="이전">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav next" id="lbNext" aria-label="다음">›</button>
+  <p class="lb-cap" id="lbCap"></p>
+</div>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
