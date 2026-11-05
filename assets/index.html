@@ -12,49 +12,80 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: system-
 main { width: min(1100px, 100% - 32px); margin: 0 auto; padding: 32px 0 60px; }
 h1 { margin: 0; font-size: 1.7rem; }
 h1 span { color: var(--amber); }
-.sub { color: var(--muted); margin: 4px 0 28px; font-size: .95rem; }
-h2 { font-size: 1.15rem; margin: 36px 0 12px; }
+.sub { color: var(--muted); margin: 4px 0 20px; font-size: .95rem; }
+h2 { font-size: 1.15rem; margin: 28px 0 12px; }
+h2 small { color: var(--muted); font-weight: 400; font-size: .85rem; }
+
+/* 탭 */
+.tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+.tabs a { color: var(--muted); text-decoration: none; font-weight: 700; padding: 10px 16px; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.tabs a[aria-current="page"] { color: var(--ink); border-color: var(--amber); }
+.subtabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 4px; }
+.subtabs a { display: flex; align-items: center; gap: 6px; color: var(--ink); text-decoration: none; font-size: .92rem;
+  border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px 3px 4px; background: var(--card); }
+.subtabs a img { width: 26px; height: 26px; border-radius: 50%; background: #2a231d; object-fit: contain; }
+.subtabs a[aria-current="page"] { border-color: var(--amber); color: var(--amber); }
+.tabs a:focus-visible, .subtabs a:focus-visible, .dl a:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
 figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px; }
 figure .pic { aspect-ratio: 1; border-radius: 10px; background: #2a231d; display: grid; place-items: center; overflow: hidden; }
 figure img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
-#cats figure img { image-rendering: auto; width: 80%; height: 80%; }
-h2 small { color: var(--muted); font-weight: 400; font-size: .85rem; }
 figcaption { margin-top: 8px; font-size: .9rem; }
 figcaption b { display: block; }
-figcaption code { color: var(--muted); font-size: .78rem; }
+figcaption code { color: var(--muted); font-size: .78rem; word-break: break-all; }
 .dl { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .dl a { color: var(--ink); text-decoration: none; font-size: .78rem; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
-.dl a:hover, .dl a:focus-visible { border-color: var(--amber); color: var(--amber); outline: none; }
-.dl small { color: var(--muted); }
+.dl a:hover { border-color: var(--amber); color: var(--amber); }
+
+/* 게임 고양이: 1·2·3칸을 같은 폭으로 나란히 */
+.lens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: end; max-width: 640px; }
+.lens figure .pic { aspect-ratio: auto; padding: 8px; }
+.lens figure img { image-rendering: auto; height: auto; }
 </style>
 </head>
 <body>
 <main>
   <h1>후와 <span>에셋</span></h1>
-  <p class="sub">지금까지 만든 후와네 그림 모음. 도트 후와(원본 PNG + 움직이는 GIF·WebP 640px, 4프레임)와 게임 고양이 8마리(512px PNG).</p>
+  <p class="sub">지금까지 만든 후와네 그림 모음.</p>
 
-  <h2>캐릭터 12종</h2>
-  <div class="grid" id="chars"></div>
+  <nav class="tabs" aria-label="종류">
+    <a href="#dot" data-tab="dot">도트</a>
+    <a href="#game" data-tab="game">게임 이미지</a>
+  </nav>
 
-  <h2>문 긁기 프레임</h2>
-  <div class="grid" id="frames"></div>
+  <section id="dot" hidden>
+    <h2>캐릭터 12종 <small>· 원본 PNG + 움직이는 GIF·WebP(640px, 4프레임)</small></h2>
+    <div class="grid" id="chars"></div>
+    <h2>문 긁기 프레임</h2>
+    <div class="grid" id="frames"></div>
+  </section>
 
-  <h2>게임 고양이 8마리 <small>· 위에서 본 모습, 1·2·3칸 길이</small></h2>
-  <div class="grid" id="cats"></div>
+  <section id="game" hidden>
+    <nav class="subtabs" id="catTabs" aria-label="고양이"></nav>
+    <h2 id="catTitle"></h2>
+    <div class="lens" id="lens"></div>
+  </section>
 </main>
 <script>
+const $ = (s) => document.querySelector(s);
 const CHARS = [
   ["00-standing-grumpy", "근엄 모드"], ["01-standing-friendly", "기분 좋은 날"], ["02-sit", "정자세"],
   ["03-loaf", "식빵"], ["04-sleep", "꿀잠"], ["05-paw-reach", "손!"], ["06-peek", "감시 중"],
   ["07-stretch", "기지개"], ["08-groom", "그루밍"], ["09-play", "사냥 자세"], ["10-side-idle", "옆모습"],
   ["11-door-scratch", "문 열어"],
 ];
+const CATS = [
+  ["fuwa", "후와"], ["shuri", "슈리"], ["nabi", "나비"], ["dubu", "두부"],
+  ["bongbong", "봉봉"], ["roro", "로로"], ["kkomi", "꼬미"], ["namu", "나무"],
+];
+
 function card(src, name, code, links) {
   const f = document.createElement("figure");
-  f.innerHTML = `<div class="pic"><img loading="lazy" decoding="async" alt=""></div><figcaption><b></b><code></code><div class="dl"></div></figcaption>`;
-  f.querySelector("img").src = src;
-  f.querySelector("img").alt = name;
+  f.innerHTML = `<div class="pic"><img decoding="async" alt=""></div><figcaption><b></b><code></code><div class="dl"></div></figcaption>`;
+  const img = f.querySelector("img");
+  img.dataset.src = src; img.alt = name;
   f.querySelector("b").textContent = name;
   f.querySelector("code").textContent = code;
   for (const [label, href] of links) {
@@ -62,24 +93,46 @@ function card(src, name, code, links) {
   }
   return f;
 }
+// 보이는 탭의 그림만 불러온다(숨은 탭까지 한꺼번에 받지 않게)
+function load(root) { for (const i of root.querySelectorAll("img[data-src]")) { i.src = i.dataset.src; i.removeAttribute("data-src"); } }
+function mark(links, on) { for (const a of links) { if (on(a)) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); } }
+
 for (const [k, name] of CHARS) {
-  document.getElementById("chars").append(card(`fuwa/anim/${k}.webp`, name, k, [
+  $("#chars").append(card(`fuwa/anim/${k}.webp`, name, k, [
     ["PNG 원본", `fuwa/still/${k}.png`], ["GIF", `fuwa/anim/${k}.gif`], ["WebP", `fuwa/anim/${k}.webp`],
   ]));
 }
-const fr = document.getElementById("frames");
-fr.append(card("fuwa/frames/11-door-scratch.gif", "문 긁기 (처음 버전 GIF)", "11-door-scratch.gif", [["GIF", "fuwa/frames/11-door-scratch.gif"]]));
+$("#frames").append(card("fuwa/frames/11-door-scratch.gif", "처음 버전 GIF", "11-door-scratch.gif", [["GIF", "fuwa/frames/11-door-scratch.gif"]]));
 for (let i = 0; i < 4; i++) {
-  fr.append(card(`fuwa/frames/11-door-scratch-${i}.png`, `프레임 ${i}`, `11-door-scratch-${i}.png`, [["PNG", `fuwa/frames/11-door-scratch-${i}.png`]]));
+  $("#frames").append(card(`fuwa/frames/11-door-scratch-${i}.png`, `프레임 ${i}`, `11-door-scratch-${i}.png`, [["PNG", `fuwa/frames/11-door-scratch-${i}.png`]]));
 }
-const CATS = [
-  ["fuwa", "후와"], ["shuri", "슈리"], ["nabi", "나비"], ["dubu", "두부"],
-  ["bongbong", "봉봉"], ["roro", "로로"], ["kkomi", "꼬미"], ["namu", "나무"],
-];
 for (const [k, name] of CATS) {
-  document.getElementById("cats").append(card(`cats/${k}/${k}-1cell.png`, name, `cats/${k}/`,
-    [1, 2, 3].map((L) => [`${L}칸 PNG`, `cats/${k}/${k}-${L}cell.png`])));
+  const a = document.createElement("a");
+  a.href = `#game/${k}`; a.dataset.cat = k;
+  a.innerHTML = `<img alt="" src="cats/${k}/${k}-1cell.png" width="26" height="26"><span></span>`;
+  a.querySelector("span").textContent = name;
+  $("#catTabs").append(a);
 }
+
+// 주소: #dot · #game · #game/<이름>.  /assets/cats/<이름>/ 같은 폴더 주소는 _redirects 가 여기로 보낸다
+function route() {
+  const [tab, sub] = (location.hash.slice(1) || "dot").split("/");
+  const t = tab === "game" ? "game" : "dot";
+  mark(document.querySelectorAll(".tabs a"), (a) => a.dataset.tab === t);
+  $("#dot").hidden = t !== "dot";
+  $("#game").hidden = t !== "game";
+  if (t === "dot") { load($("#dot")); return; }
+  const [k, name] = CATS.find(([c]) => c === sub) || CATS[0];
+  mark($("#catTabs").children, (a) => a.dataset.cat === k);
+  const small = document.createElement("small");
+  small.textContent = ` · cats/${k}/ · 위에서 본 모습, 512px PNG`;
+  $("#catTitle").replaceChildren(name, small);
+  $("#lens").replaceChildren(...[1, 2, 3].map((L) =>
+    card(`cats/${k}/${k}-${L}cell.png`, `${L}칸`, `${k}-${L}cell.png`, [["PNG", `cats/${k}/${k}-${L}cell.png`]])));
+  load($("#game"));
+}
+addEventListener("hashchange", route);
+route();
 </script>
 </body>
 </html>
