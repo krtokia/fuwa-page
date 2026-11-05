@@ -1,0 +1,13 @@
+# fuwa.dad
+
+고양이 후와(와 같이 사는 고양이 7마리)의 홈페이지. Home page of Fuwa the cat and seven housemates.
+
+## 고양이 생김새 기준 (canonical cat references)
+
+- [실사 기준 그림 목록 (JSON)](https://fuwa.dad/assets/ref/index.json): 고양이별 설명(한/영)과 방향별 원본 PNG 주소
+- [실사 기준 그림 설명 (Markdown)](https://fuwa.dad/assets/ref/README.md): 같은 내용을 글로
+- [에셋 페이지](https://fuwa.dad/assets/): 도트 후와, 게임 그림, 실사 기준
+
+## 그 밖
+
+- [후와 게임](https://game.fuwa.dad/)

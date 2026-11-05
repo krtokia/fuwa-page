@@ -1,0 +1,301 @@
+{
+  "title": "후와네 고양이 실사 기준 그림 (canonical appearance references)",
+  "about": "이 그림들이 각 고양이 생김새의 기준이다. 새 그림·캐릭터를 만들 때 털색·무늬·눈색·체형을 여기에 맞춘다. These images define how each cat looks. Match coat, markings, eye color and build when drawing them.",
+  "page": "https://fuwa.dad/assets/#ref",
+  "cats": [
+    {
+      "id": "fuwa",
+      "name": "후와",
+      "description_ko": "장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정.",
+      "description_en": "Long-haired gray-and-beige cat with a big ruff and a huge plume tail, tufted ear tips, yellow-green eyes, pink nose, a slightly grumpy look.",
+      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/01-1.webp",
+      "game_assets": "https://fuwa.dad/assets/cats/fuwa/fuwa-1cell.png",
+      "views": [
+        {
+          "view": "front",
+          "label": "정면",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-front.png",
+          "width": 1199,
+          "height": 1312,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-front.webp"
+        },
+        {
+          "view": "left",
+          "label": "왼쪽 옆",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-left.png",
+          "width": 1536,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-left.webp"
+        },
+        {
+          "view": "right",
+          "label": "오른쪽 옆",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-right.png",
+          "width": 1536,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-right.webp"
+        },
+        {
+          "view": "back",
+          "label": "뒤",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-back.png",
+          "width": 1199,
+          "height": 1312,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-back.webp"
+        },
+        {
+          "view": "top",
+          "label": "위에서",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-top.png",
+          "width": 1024,
+          "height": 1536,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-top.webp"
+        },
+        {
+          "view": "bottom",
+          "label": "아래(배)",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-bottom.png",
+          "width": 1024,
+          "height": 1536,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-bottom.webp"
+        },
+        {
+          "view": "three-quarter",
+          "label": "3/4",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-three-quarter.png",
+          "width": 1536,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-three-quarter.webp"
+        }
+      ],
+      "poses": [
+        {
+          "pose": "sit-front",
+          "label": "앉음",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-pose-sit-front.png",
+          "width": 1254,
+          "height": 1254,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-pose-sit-front.webp"
+        },
+        {
+          "pose": "stand-side",
+          "label": "서 있음(옆)",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-pose-stand-side.png",
+          "width": 1254,
+          "height": 1254,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-pose-stand-side.webp"
+        },
+        {
+          "pose": "loaf",
+          "label": "식빵",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-pose-loaf.png",
+          "width": 1254,
+          "height": 1254,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-pose-loaf.webp"
+        },
+        {
+          "pose": "sleep",
+          "label": "잠",
+          "url": "https://fuwa.dad/assets/ref/fuwa/fuwa-pose-sleep.png",
+          "width": 1254,
+          "height": 1254,
+          "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-pose-sleep.webp"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "id": "shuri",
+      "name": "슈리",
+      "description_ko": "갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸.",
+      "description_en": "Short-haired brown mackerel tabby with large ears, an M mark on the forehead, dark rings along the tail with a black tip, yellow-green eyes, pink nose, slim build.",
+      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/04-1.webp",
+      "game_assets": "https://fuwa.dad/assets/cats/shuri/shuri-1cell.png",
+      "views": [
+        {
+          "view": "front",
+          "label": "정면",
+          "url": "https://fuwa.dad/assets/ref/shuri/shuri-front.png",
+          "width": 1024,
+          "height": 1536,
+          "preview": "https://fuwa.dad/assets/ref/shuri/s/shuri-front.webp",
+          "note": "꼬리가 머리 바로 뒤로 솟아 머리에서 난 것처럼 보인다(실제로는 몸 뒤쪽)."
+        },
+        {
+          "view": "left",
+          "label": "왼쪽 옆",
+          "url": "https://fuwa.dad/assets/ref/shuri/shuri-left.png",
+          "width": 1536,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/shuri/s/shuri-left.webp"
+        },
+        {
+          "view": "right",
+          "label": "오른쪽 옆",
+          "url": "https://fuwa.dad/assets/ref/shuri/shuri-right.png",
+          "width": 1536,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/shuri/s/shuri-right.webp"
+        },
+        {
+          "view": "back",
+          "label": "뒤",
+          "url": "https://fuwa.dad/assets/ref/shuri/shuri-back.png",
+          "width": 1024,
+          "height": 1536,
+          "preview": "https://fuwa.dad/assets/ref/shuri/s/shuri-back.webp"
+        },
+        {
+          "view": "top",
+          "label": "위에서",
+          "url": "https://fuwa.dad/assets/ref/shuri/shuri-top.png",
+          "width": 1024,
+          "height": 1536,
+          "preview": "https://fuwa.dad/assets/ref/shuri/s/shuri-top.webp"
+        },
+        {
+          "view": "bottom",
+          "label": "아래(배)",
+          "url": "https://fuwa.dad/assets/ref/shuri/shuri-bottom.png",
+          "width": 1024,
+          "height": 1536,
+          "preview": "https://fuwa.dad/assets/ref/shuri/s/shuri-bottom.webp"
+        },
+        {
+          "view": "three-quarter",
+          "label": "3/4",
+          "url": "https://fuwa.dad/assets/ref/shuri/shuri-three-quarter.png",
+          "width": 1536,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/shuri/s/shuri-three-quarter.webp"
+        }
+      ],
+      "poses": [],
+      "status": "ready"
+    },
+    {
+      "id": "nabi",
+      "name": "나비",
+      "description_ko": "짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코.",
+      "description_en": "Short-haired tuxedo cat in charcoal gray (a lighter black) with white muzzle, chest, belly and paws, a small black spot on the lower lip, yellow eyes, black nose.",
+      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/02-1.webp",
+      "game_assets": "https://fuwa.dad/assets/cats/nabi/nabi-1cell.png",
+      "views": [
+        {
+          "view": "front",
+          "label": "정면",
+          "url": "https://fuwa.dad/assets/ref/nabi/nabi-front.png",
+          "width": 1199,
+          "height": 1312,
+          "preview": "https://fuwa.dad/assets/ref/nabi/s/nabi-front.webp"
+        },
+        {
+          "view": "left",
+          "label": "왼쪽 옆",
+          "url": "https://fuwa.dad/assets/ref/nabi/nabi-left.png",
+          "width": 1536,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/nabi/s/nabi-left.webp"
+        },
+        {
+          "view": "right",
+          "label": "오른쪽 옆",
+          "url": "https://fuwa.dad/assets/ref/nabi/nabi-right.png",
+          "width": 1535,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/nabi/s/nabi-right.webp"
+        },
+        {
+          "view": "back",
+          "label": "뒤",
+          "url": "https://fuwa.dad/assets/ref/nabi/nabi-back.png",
+          "width": 1199,
+          "height": 1312,
+          "preview": "https://fuwa.dad/assets/ref/nabi/s/nabi-back.webp"
+        },
+        {
+          "view": "top",
+          "label": "위에서",
+          "url": "https://fuwa.dad/assets/ref/nabi/nabi-top.png",
+          "width": 1024,
+          "height": 1536,
+          "preview": "https://fuwa.dad/assets/ref/nabi/s/nabi-top.webp",
+          "note": "머리 위에 작은 고리 모양 잡티가 있다(무늬 아님)."
+        },
+        {
+          "view": "bottom",
+          "label": "아래(배)",
+          "url": "https://fuwa.dad/assets/ref/nabi/nabi-bottom.png",
+          "width": 1024,
+          "height": 1536,
+          "preview": "https://fuwa.dad/assets/ref/nabi/s/nabi-bottom.webp"
+        },
+        {
+          "view": "three-quarter",
+          "label": "3/4",
+          "url": "https://fuwa.dad/assets/ref/nabi/nabi-three-quarter.png",
+          "width": 1536,
+          "height": 1024,
+          "preview": "https://fuwa.dad/assets/ref/nabi/s/nabi-three-quarter.webp"
+        }
+      ],
+      "poses": [],
+      "status": "ready"
+    },
+    {
+      "id": "dubu",
+      "name": "두부",
+      "description_ko": "흰색 스코티시폴드.",
+      "description_en": "White Scottish Fold.",
+      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/03-1.webp",
+      "game_assets": "https://fuwa.dad/assets/cats/dubu/dubu-1cell.png",
+      "views": [],
+      "poses": [],
+      "status": "pending (실사 기준 그림 아직 없음)"
+    },
+    {
+      "id": "bongbong",
+      "name": "봉봉",
+      "description_ko": "회색 무늬가 있는 스코티시폴드.",
+      "description_en": "Scottish Fold with gray markings.",
+      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/07-1.webp",
+      "game_assets": "https://fuwa.dad/assets/cats/bongbong/bongbong-1cell.png",
+      "views": [],
+      "poses": [],
+      "status": "pending (실사 기준 그림 아직 없음)"
+    },
+    {
+      "id": "roro",
+      "name": "로로",
+      "description_ko": "턱시도(나비보다 진한 검정).",
+      "description_en": "Tuxedo cat, darker black than Nabi.",
+      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/08-1.webp",
+      "game_assets": "https://fuwa.dad/assets/cats/roro/roro-1cell.png",
+      "views": [],
+      "poses": [],
+      "status": "pending (실사 기준 그림 아직 없음)"
+    },
+    {
+      "id": "kkomi",
+      "name": "꼬미",
+      "description_ko": "러시안블루.",
+      "description_en": "Russian Blue.",
+      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/05-1.webp",
+      "game_assets": "https://fuwa.dad/assets/cats/kkomi/kkomi-1cell.png",
+      "views": [],
+      "poses": [],
+      "status": "pending (실사 기준 그림 아직 없음)"
+    },
+    {
+      "id": "namu",
+      "name": "나무",
+      "description_ko": "샴.",
+      "description_en": "Siamese.",
+      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/06-1.webp",
+      "game_assets": "https://fuwa.dad/assets/cats/namu/namu-1cell.png",
+      "views": [],
+      "poses": [],
+      "status": "pending (실사 기준 그림 아직 없음)"
+    }
+  ]
+}

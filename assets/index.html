@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>후와 에셋</title>
 <meta name="robots" content="noindex, nofollow">
+<link rel="alternate" type="application/json" href="ref/index.json" title="고양이 실사 기준 그림 목록">
 <style>
 :root { --bg: #14100d; --card: #1f1a16; --line: #342b24; --ink: #f3ebe1; --muted: #a89c8f; --amber: #e7b04a; }
 * { box-sizing: border-box; }
@@ -43,6 +44,13 @@ figcaption code { color: var(--muted); font-size: .78rem; word-break: break-all;
 .lens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: end; max-width: 640px; }
 .lens figure .pic { aspect-ratio: auto; padding: 8px; }
 .lens figure img { image-rendering: auto; height: auto; }
+
+/* 실사 기준 */
+.refgrid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.refgrid figure img { image-rendering: auto; }
+.desc { color: var(--muted); margin: -4px 0 14px; font-size: .92rem; }
+figcaption em { display: block; color: var(--amber); font-style: normal; font-size: .78rem; margin-top: 4px; }
+.sub a { color: var(--amber); }
 </style>
 </head>
 <body>
@@ -53,6 +61,7 @@ figcaption code { color: var(--muted); font-size: .78rem; word-break: break-all;
   <nav class="tabs" aria-label="종류">
     <a href="#dot" data-tab="dot">도트</a>
     <a href="#game" data-tab="game">게임 이미지</a>
+    <a href="#ref" data-tab="ref">실사 기준</a>
   </nav>
 
   <section id="dot" hidden>
@@ -67,6 +76,29 @@ figcaption code { color: var(--muted); font-size: .78rem; word-break: break-all;
     <h2 id="catTitle"></h2>
     <div class="lens" id="lens"></div>
   </section>
+
+<!-- REF:START (tools/build_ref.py 가 만든다. 손으로 고치지 말 것) -->
+<section id="ref" hidden>
+<p class="sub">각 고양이 생김새의 <b>기준 그림</b>. 새 그림을 만들 때 털색·무늬·눈색·체형을 여기에 맞춘다. AI·스크립트용 목록: <a href="ref/index.json">ref/index.json</a> · <a href="ref/README.md">ref/README.md</a></p>
+<nav class="subtabs" id="refTabs" aria-label="고양이"><a href="#ref/fuwa" data-cat="fuwa"><img alt="" src="ref/fuwa/s/fuwa-front.webp" width="26" height="26" loading="lazy"><span>후와</span></a><a href="#ref/shuri" data-cat="shuri"><img alt="" src="ref/shuri/s/shuri-front.webp" width="26" height="26" loading="lazy"><span>슈리</span></a><a href="#ref/nabi" data-cat="nabi"><img alt="" src="ref/nabi/s/nabi-front.webp" width="26" height="26" loading="lazy"><span>나비</span></a></nav>
+<article class="refcat" data-cat="fuwa">
+<h2>후와 <small>· fuwa · 방향 7장 + 자세 4장</small></h2>
+<p class="desc">장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정.<br><span lang="en">Long-haired gray-and-beige cat with a big ruff and a huge plume tail, tufted ear tips, yellow-green eyes, pink nose, a slightly grumpy look.</span></p>
+<div class="grid refgrid"><figure><div class="pic"><img src="ref/fuwa/s/fuwa-front.webp" alt="후와 정면 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>정면</b><code>fuwa-front.png</code><div class="dl"><a href="ref/fuwa/fuwa-front.png" download>PNG 1199×1312</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-left.webp" alt="후와 왼쪽 옆 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>왼쪽 옆</b><code>fuwa-left.png</code><div class="dl"><a href="ref/fuwa/fuwa-left.png" download>PNG 1536×1024</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-right.webp" alt="후와 오른쪽 옆 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>오른쪽 옆</b><code>fuwa-right.png</code><div class="dl"><a href="ref/fuwa/fuwa-right.png" download>PNG 1536×1024</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-back.webp" alt="후와 뒤 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>뒤</b><code>fuwa-back.png</code><div class="dl"><a href="ref/fuwa/fuwa-back.png" download>PNG 1199×1312</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-top.webp" alt="후와 위에서 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>위에서</b><code>fuwa-top.png</code><div class="dl"><a href="ref/fuwa/fuwa-top.png" download>PNG 1024×1536</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-bottom.webp" alt="후와 아래(배) — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>아래(배)</b><code>fuwa-bottom.png</code><div class="dl"><a href="ref/fuwa/fuwa-bottom.png" download>PNG 1024×1536</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-three-quarter.webp" alt="후와 3/4 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>3/4</b><code>fuwa-three-quarter.png</code><div class="dl"><a href="ref/fuwa/fuwa-three-quarter.png" download>PNG 1536×1024</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-pose-sit-front.webp" alt="후와 앉음 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>앉음</b><code>fuwa-pose-sit-front.png</code><div class="dl"><a href="ref/fuwa/fuwa-pose-sit-front.png" download>PNG 1254×1254</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-pose-stand-side.webp" alt="후와 서 있음(옆) — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>서 있음(옆)</b><code>fuwa-pose-stand-side.png</code><div class="dl"><a href="ref/fuwa/fuwa-pose-stand-side.png" download>PNG 1254×1254</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-pose-loaf.webp" alt="후와 식빵 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>식빵</b><code>fuwa-pose-loaf.png</code><div class="dl"><a href="ref/fuwa/fuwa-pose-loaf.png" download>PNG 1254×1254</a></div></figcaption></figure><figure><div class="pic"><img src="ref/fuwa/s/fuwa-pose-sleep.webp" alt="후와 잠 — 장모 회색·베이지 고양이. 목 갈기와 꼬리가 아주 풍성하고 귀 끝에 장식털이 있다. 황록색 눈, 분홍 코, 늘 살짝 시큰둥한 표정." loading="lazy" decoding="async"></div><figcaption><b>잠</b><code>fuwa-pose-sleep.png</code><div class="dl"><a href="ref/fuwa/fuwa-pose-sleep.png" download>PNG 1254×1254</a></div></figcaption></figure></div>
+</article>
+<article class="refcat" data-cat="shuri">
+<h2>슈리 <small>· shuri · 방향 7장</small></h2>
+<p class="desc">갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸.<br><span lang="en">Short-haired brown mackerel tabby with large ears, an M mark on the forehead, dark rings along the tail with a black tip, yellow-green eyes, pink nose, slim build.</span></p>
+<div class="grid refgrid"><figure><div class="pic"><img src="ref/shuri/s/shuri-front.webp" alt="슈리 정면 — 갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸." loading="lazy" decoding="async"></div><figcaption><b>정면</b><code>shuri-front.png</code><em>⚠️ 꼬리가 머리 바로 뒤로 솟아 머리에서 난 것처럼 보인다(실제로는 몸 뒤쪽).</em><div class="dl"><a href="ref/shuri/shuri-front.png" download>PNG 1024×1536</a></div></figcaption></figure><figure><div class="pic"><img src="ref/shuri/s/shuri-left.webp" alt="슈리 왼쪽 옆 — 갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸." loading="lazy" decoding="async"></div><figcaption><b>왼쪽 옆</b><code>shuri-left.png</code><div class="dl"><a href="ref/shuri/shuri-left.png" download>PNG 1536×1024</a></div></figcaption></figure><figure><div class="pic"><img src="ref/shuri/s/shuri-right.webp" alt="슈리 오른쪽 옆 — 갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸." loading="lazy" decoding="async"></div><figcaption><b>오른쪽 옆</b><code>shuri-right.png</code><div class="dl"><a href="ref/shuri/shuri-right.png" download>PNG 1536×1024</a></div></figcaption></figure><figure><div class="pic"><img src="ref/shuri/s/shuri-back.webp" alt="슈리 뒤 — 갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸." loading="lazy" decoding="async"></div><figcaption><b>뒤</b><code>shuri-back.png</code><div class="dl"><a href="ref/shuri/shuri-back.png" download>PNG 1024×1536</a></div></figcaption></figure><figure><div class="pic"><img src="ref/shuri/s/shuri-top.webp" alt="슈리 위에서 — 갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸." loading="lazy" decoding="async"></div><figcaption><b>위에서</b><code>shuri-top.png</code><div class="dl"><a href="ref/shuri/shuri-top.png" download>PNG 1024×1536</a></div></figcaption></figure><figure><div class="pic"><img src="ref/shuri/s/shuri-bottom.webp" alt="슈리 아래(배) — 갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸." loading="lazy" decoding="async"></div><figcaption><b>아래(배)</b><code>shuri-bottom.png</code><div class="dl"><a href="ref/shuri/shuri-bottom.png" download>PNG 1024×1536</a></div></figcaption></figure><figure><div class="pic"><img src="ref/shuri/s/shuri-three-quarter.webp" alt="슈리 3/4 — 갈색 고등어 태비 단모. 귀가 크고 이마에 M자 무늬, 꼬리에 검은 고리 줄(끝은 검정). 황록색 눈, 분홍 코, 날씬한 몸." loading="lazy" decoding="async"></div><figcaption><b>3/4</b><code>shuri-three-quarter.png</code><div class="dl"><a href="ref/shuri/shuri-three-quarter.png" download>PNG 1536×1024</a></div></figcaption></figure></div>
+</article>
+<article class="refcat" data-cat="nabi">
+<h2>나비 <small>· nabi · 방향 7장</small></h2>
+<p class="desc">짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코.<br><span lang="en">Short-haired tuxedo cat in charcoal gray (a lighter black) with white muzzle, chest, belly and paws, a small black spot on the lower lip, yellow eyes, black nose.</span></p>
+<div class="grid refgrid"><figure><div class="pic"><img src="ref/nabi/s/nabi-front.webp" alt="나비 정면 — 짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코." loading="lazy" decoding="async"></div><figcaption><b>정면</b><code>nabi-front.png</code><div class="dl"><a href="ref/nabi/nabi-front.png" download>PNG 1199×1312</a></div></figcaption></figure><figure><div class="pic"><img src="ref/nabi/s/nabi-left.webp" alt="나비 왼쪽 옆 — 짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코." loading="lazy" decoding="async"></div><figcaption><b>왼쪽 옆</b><code>nabi-left.png</code><div class="dl"><a href="ref/nabi/nabi-left.png" download>PNG 1536×1024</a></div></figcaption></figure><figure><div class="pic"><img src="ref/nabi/s/nabi-right.webp" alt="나비 오른쪽 옆 — 짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코." loading="lazy" decoding="async"></div><figcaption><b>오른쪽 옆</b><code>nabi-right.png</code><div class="dl"><a href="ref/nabi/nabi-right.png" download>PNG 1535×1024</a></div></figcaption></figure><figure><div class="pic"><img src="ref/nabi/s/nabi-back.webp" alt="나비 뒤 — 짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코." loading="lazy" decoding="async"></div><figcaption><b>뒤</b><code>nabi-back.png</code><div class="dl"><a href="ref/nabi/nabi-back.png" download>PNG 1199×1312</a></div></figcaption></figure><figure><div class="pic"><img src="ref/nabi/s/nabi-top.webp" alt="나비 위에서 — 짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코." loading="lazy" decoding="async"></div><figcaption><b>위에서</b><code>nabi-top.png</code><em>⚠️ 머리 위에 작은 고리 모양 잡티가 있다(무늬 아님).</em><div class="dl"><a href="ref/nabi/nabi-top.png" download>PNG 1024×1536</a></div></figcaption></figure><figure><div class="pic"><img src="ref/nabi/s/nabi-bottom.webp" alt="나비 아래(배) — 짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코." loading="lazy" decoding="async"></div><figcaption><b>아래(배)</b><code>nabi-bottom.png</code><div class="dl"><a href="ref/nabi/nabi-bottom.png" download>PNG 1024×1536</a></div></figcaption></figure><figure><div class="pic"><img src="ref/nabi/s/nabi-three-quarter.webp" alt="나비 3/4 — 짙은 회색(밝은 검정) 턱시도 단모. 주둥이·가슴·배·네 발이 흰색, 아랫입술에 작은 검은 점. 노란 눈, 검은 코." loading="lazy" decoding="async"></div><figcaption><b>3/4</b><code>nabi-three-quarter.png</code><div class="dl"><a href="ref/nabi/nabi-three-quarter.png" download>PNG 1536×1024</a></div></figcaption></figure></div>
+</article>
+<p class="sub">아직 없음: 두부, 봉봉, 로로, 꼬미, 나무</p>
+</section>
+<!-- REF:END -->
 </main>
 <script>
 const $ = (s) => document.querySelector(s);
@@ -117,11 +149,18 @@ for (const [k, name] of CATS) {
 // 주소: #dot · #game · #game/<이름>.  /assets/cats/<이름>/ 같은 폴더 주소는 _redirects 가 여기로 보낸다
 function route() {
   const [tab, sub] = (location.hash.slice(1) || "dot").split("/");
-  const t = tab === "game" ? "game" : "dot";
+  const t = ["game", "ref"].includes(tab) ? tab : "dot";
   mark(document.querySelectorAll(".tabs a"), (a) => a.dataset.tab === t);
-  $("#dot").hidden = t !== "dot";
-  $("#game").hidden = t !== "game";
+  for (const id of ["dot", "game", "ref"]) $("#" + id).hidden = t !== id;
   if (t === "dot") { load($("#dot")); return; }
+  if (t === "ref") {
+    // 그림은 HTML 에 그대로 있다(AI 가 JS 없이 읽게). 여기선 고른 고양이만 보이게
+    const arts = [...document.querySelectorAll(".refcat")];
+    const k = (arts.find((a) => a.dataset.cat === sub) || arts[0]).dataset.cat;
+    for (const a of arts) a.hidden = a.dataset.cat !== k;
+    mark($("#refTabs").children, (a) => a.dataset.cat === k);
+    return;
+  }
   const [k, name] = CATS.find(([c]) => c === sub) || CATS[0];
   mark($("#catTabs").children, (a) => a.dataset.cat === k);
   const small = document.createElement("small");
