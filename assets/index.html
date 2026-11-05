@@ -18,6 +18,8 @@ h2 { font-size: 1.15rem; margin: 36px 0 12px; }
 figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px; }
 figure .pic { aspect-ratio: 1; border-radius: 10px; background: #2a231d; display: grid; place-items: center; overflow: hidden; }
 figure img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+#cats figure img { image-rendering: auto; width: 80%; height: 80%; }
+h2 small { color: var(--muted); font-weight: 400; font-size: .85rem; }
 figcaption { margin-top: 8px; font-size: .9rem; }
 figcaption b { display: block; }
 figcaption code { color: var(--muted); font-size: .78rem; }
@@ -30,13 +32,16 @@ figcaption code { color: var(--muted); font-size: .78rem; }
 <body>
 <main>
   <h1>후와 <span>에셋</span></h1>
-  <p class="sub">지금까지 만든 도트 후와 모음. 원본(PNG)과 움직이는 버전(GIF·WebP 640px, 4프레임).</p>
+  <p class="sub">지금까지 만든 후와네 그림 모음. 도트 후와(원본 PNG + 움직이는 GIF·WebP 640px, 4프레임)와 게임 고양이 8마리(512px PNG).</p>
 
   <h2>캐릭터 12종</h2>
   <div class="grid" id="chars"></div>
 
   <h2>문 긁기 프레임</h2>
   <div class="grid" id="frames"></div>
+
+  <h2>게임 고양이 8마리 <small>· 위에서 본 모습, 1·2·3칸 길이</small></h2>
+  <div class="grid" id="cats"></div>
 </main>
 <script>
 const CHARS = [
@@ -66,6 +71,14 @@ const fr = document.getElementById("frames");
 fr.append(card("fuwa/frames/11-door-scratch.gif", "문 긁기 (처음 버전 GIF)", "11-door-scratch.gif", [["GIF", "fuwa/frames/11-door-scratch.gif"]]));
 for (let i = 0; i < 4; i++) {
   fr.append(card(`fuwa/frames/11-door-scratch-${i}.png`, `프레임 ${i}`, `11-door-scratch-${i}.png`, [["PNG", `fuwa/frames/11-door-scratch-${i}.png`]]));
+}
+const CATS = [
+  ["fuwa", "후와"], ["shuri", "슈리"], ["nabi", "나비"], ["dubu", "두부"],
+  ["bongbong", "봉봉"], ["roro", "로로"], ["kkomi", "꼬미"], ["namu", "나무"],
+];
+for (const [k, name] of CATS) {
+  document.getElementById("cats").append(card(`cats/${k}/${k}-1cell.png`, name, `cats/${k}/`,
+    [1, 2, 3].map((L) => [`${L}칸 PNG`, `cats/${k}/${k}-${L}cell.png`])));
 }
 </script>
 </body>
