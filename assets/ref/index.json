@@ -101,8 +101,7 @@
           "height": 1254,
           "preview": "https://fuwa.dad/assets/ref/fuwa/s/fuwa-pose-sleep.webp"
         }
-      ],
-      "status": "ready"
+      ]
     },
     {
       "id": "shuri",
@@ -170,8 +169,7 @@
           "preview": "https://fuwa.dad/assets/ref/shuri/s/shuri-three-quarter.webp"
         }
       ],
-      "poses": [],
-      "status": "ready"
+      "poses": []
     },
     {
       "id": "nabi",
@@ -239,63 +237,7 @@
           "preview": "https://fuwa.dad/assets/ref/nabi/s/nabi-three-quarter.webp"
         }
       ],
-      "poses": [],
-      "status": "ready"
-    },
-    {
-      "id": "dubu",
-      "name": "두부",
-      "description_ko": "흰색 스코티시폴드.",
-      "description_en": "White Scottish Fold.",
-      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/03-1.webp",
-      "game_assets": "https://fuwa.dad/assets/cats/dubu/dubu-1cell.png",
-      "views": [],
-      "poses": [],
-      "status": "pending (실사 기준 그림 아직 없음)"
-    },
-    {
-      "id": "bongbong",
-      "name": "봉봉",
-      "description_ko": "회색 무늬가 있는 스코티시폴드.",
-      "description_en": "Scottish Fold with gray markings.",
-      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/07-1.webp",
-      "game_assets": "https://fuwa.dad/assets/cats/bongbong/bongbong-1cell.png",
-      "views": [],
-      "poses": [],
-      "status": "pending (실사 기준 그림 아직 없음)"
-    },
-    {
-      "id": "roro",
-      "name": "로로",
-      "description_ko": "턱시도(나비보다 진한 검정).",
-      "description_en": "Tuxedo cat, darker black than Nabi.",
-      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/08-1.webp",
-      "game_assets": "https://fuwa.dad/assets/cats/roro/roro-1cell.png",
-      "views": [],
-      "poses": [],
-      "status": "pending (실사 기준 그림 아직 없음)"
-    },
-    {
-      "id": "kkomi",
-      "name": "꼬미",
-      "description_ko": "러시안블루.",
-      "description_en": "Russian Blue.",
-      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/05-1.webp",
-      "game_assets": "https://fuwa.dad/assets/cats/kkomi/kkomi-1cell.png",
-      "views": [],
-      "poses": [],
-      "status": "pending (실사 기준 그림 아직 없음)"
-    },
-    {
-      "id": "namu",
-      "name": "나무",
-      "description_ko": "샴.",
-      "description_en": "Siamese.",
-      "game_sprite": "https://game.fuwa.dad/cat-outing/cats/06-1.webp",
-      "game_assets": "https://fuwa.dad/assets/cats/namu/namu-1cell.png",
-      "views": [],
-      "poses": [],
-      "status": "pending (실사 기준 그림 아직 없음)"
+      "poses": []
     }
   ]
 }

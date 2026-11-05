@@ -1,6 +1,6 @@
 # fuwa.dad
 
-고양이 후와(와 같이 사는 고양이 7마리)의 홈페이지. Home page of Fuwa the cat and seven housemates.
+고양이 후와의 홈페이지. Home page of Fuwa the cat.
 
 ## 고양이 생김새 기준 (canonical cat references)
 
