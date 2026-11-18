@@ -193,7 +193,27 @@ body:not(.loading) .loader { opacity: 0; visibility: hidden; }
 .rm .row { animation: none; }
 .rm .wall { overflow-x: auto; transform: none; margin-inline: 0; }
 
+/* 후와와 친구들 (tools/build_ref.py 가 만드는 카드) */
+.family-sec { padding: 10svh 16px 6svh; text-align: center; }
+.family { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; width: min(1000px, 100%); margin: 0 auto; align-items: start; }
+.kin { border-radius: 22px; padding: 14px 14px 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); text-align: center; }
+.kin[open] { border-color: rgba(231,176,74,.35); }
+.kin summary { list-style: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.kin summary::-webkit-details-marker { display: none; }
+.kin summary:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; border-radius: 14px; }
+.kin-pic { display: block; aspect-ratio: 1; border-radius: 16px; overflow: hidden; background: radial-gradient(circle at 50% 60%, rgba(231,176,74,.14), transparent 70%); }
+.kin-pic img { width: 100%; height: 100%; object-fit: contain; }
+.kin b { display: block; font-family: var(--serif); font-size: 1.3rem; margin-top: 10px; }
+.kin small { display: block; color: var(--muted); font-size: .82rem; }
+.kin-one { display: block; margin-top: 8px; line-height: 1.55; }
+.kin-more { display: inline-block; margin-top: 10px; color: var(--amber); font-size: .85rem; }
+.kin-more::after { content: " ▾"; }
+.kin[open] .kin-more { display: none; }
+.kin p { margin: 12px 0 0; color: var(--fur); line-height: 1.7; text-align: left; }
+
 @media (max-width: 760px) {
+  .family { grid-template-columns: 1fr; max-width: 420px; }
+
   .charas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
